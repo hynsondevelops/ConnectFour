@@ -1,4 +1,4 @@
-require_relative '../lib/cipher'
+require_relative '../lib/connectFour'
  
 require 'yaml'
 

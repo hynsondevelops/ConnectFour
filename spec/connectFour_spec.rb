@@ -62,4 +62,35 @@ describe ConnectFour do
 
 	end
 
+	describe "#whosTurn" do
+		it "Returns 2 if player 2's turn, Returns 1 if player 1's turn" do
+			expect(@game.whosTurn).to eq(2)
+			@game.turn = 1
+			expect(@game.whosTurn).to eq(1)
+		end
+	end
+
+	describe "#checkVertical" do
+		it "Checks if a win happens vertically" do
+			expect(@game.checkVertical(0, 0)).to eq(true)
+		end
+	end
+
+	describe "#checkHorizontal" do
+		it "Checks if a win happens horizontally" do
+			@game.placeDisc(6)
+			@game.placeDisc(5)
+			@game.placeDisc(4)
+			@game.placeDisc(3)
+			expect(@game.checkHorizontal(5, 3)).to eq(true)
+		end
+	end
+
+	describe "#checkWin" do
+		it "Checks if a win happens" do
+			expect(@game.checkWin(5, 3)).to eq(true)
+		end
+	end
+
+
 end
